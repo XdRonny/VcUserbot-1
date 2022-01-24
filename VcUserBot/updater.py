@@ -2,7 +2,7 @@ import asyncio
 import os
 import git
 from pyrogram import Client, filters
-from pyrogram.types import 
+from pyrogram.types import Message
 from config import bot, HNDLR, SUDO_USERS, HEROKU_API_KEY, OFFICIAL_UPSTREAM_REPO, HEROKU_APP_NAME
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -34,6 +34,7 @@ RESTARTING_APP = "Re-Starting Heroku"
 async def updater(client: Client, m: Message):
     status_message = await m.reply_text("Wait...")
     active_branch_name = repo.active_branch.name
+    repo = git.Repo.init()
     if HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_API_KEY)
