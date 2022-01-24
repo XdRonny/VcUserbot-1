@@ -12,9 +12,10 @@ if os.path.exists(".env"):
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION = os.getenv("SESSION")
-HNDLR = list(os.getenv("HNDLR").split())
+HNDLR = list(getenv("HNDLR", "/ ! .").split())
 SUDO_USERS = list(map(int, os.getenv("SUDO_USERS").split()))
 HEROKU_API_KEY = os.getenv("HEROKU_API_KEY", None)
+HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME", None)
 OFFICIAL_UPSTREAM_REPO = os.getenv("OFFICIAL_UPSTREAM_REPO", "https://github.com/darkphoenix2601/VcUserbot")
 
 contact_filter = filters.create(
@@ -24,4 +25,3 @@ contact_filter = filters.create(
 
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="VcUserBot"))
 call_py = PyTgCalls(bot)
-
