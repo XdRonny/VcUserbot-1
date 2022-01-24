@@ -1,0 +1,10 @@
+{
+  "name": "DP26",
+  "version": "0.2.0",
+  "description": "vc ub tg",
+  "engines": {
+    "node": "16.0.0"
+  },
+  "author": "Professor Ashu",
+  "license": "MIT"
+}
