@@ -12,7 +12,7 @@ if os.path.exists(".env"):
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION = os.getenv("SESSION")
-HNDLR = list(os.getenv("HNDLR", "/ ! .").split())
+HNDLR = os.getenv("HNDLR", ".")
 SUDO_USERS = list(map(int, os.getenv("SUDO_USERS").split()))
 HEROKU_API_KEY = os.getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME", None)
@@ -23,5 +23,5 @@ contact_filter = filters.create(
     or message.outgoing
 )
 
-bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="VcUserBot"))
-call_py = PyTgCalls(bot)
+bot = Client(SESSION, API_ID, API_HASH)
+call_py = PyTgCalls(bot).start()
