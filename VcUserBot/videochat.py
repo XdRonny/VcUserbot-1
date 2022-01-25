@@ -17,8 +17,7 @@ from config import HNDLR, bot, call_py, SUDO_USERS
 from VcUserBot.helpers.queues import QUEUE, add_to_queue, get_queue
 
 BrayDan = [
-    "https://telegra.ph/file/c7baf717f2c4c23d3b6c4.jpg",
-    "https://telegra.ph/file/c7baf717f2c4c23d3b6c4.jpg",
+    "https://telegra.ph/file/a039bf6de4fe7a47ae6d0.jpg"
 ]
 
 IMAGE_THUMBNAIL = random.choice(BrayDan)
